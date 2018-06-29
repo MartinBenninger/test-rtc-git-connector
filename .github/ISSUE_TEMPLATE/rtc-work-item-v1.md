@@ -1,17 +1,30 @@
----
-name: RTC Work Item
-about: Create issues from RTC Work Items
-
----
+# Template from GitHub
 
 ### Description
 
-{{description.content}}
+{{#if attributes.description.content}}
+{{{turndown attributes.description.content}}}
+{{else}}
+Please add a description
+{{/if}}
 
-### Owned by
+{{#if attributes.[com.ibm.team.apt.attribute.acceptance]}}
+### Acceptance Criteria
 
-{{owner.emailAddress}}
+{{#if attributes.[com.ibm.team.apt.attribute.acceptance].content}}
+{{{turndown attributes.[com.ibm.team.apt.attribute.acceptance].content}}}
+{{else}}
+Please add some acceptance criteria
+{{/if}}
 
-### Filed Against
+{{/if}}
+### Other Attributes
 
-{{category.label}}
+| Attributes | Values |
+| --- | --- |
+| Owned By | [{{{attributes.owner.name}}}](mailto:{{{attributes.owner.emailAddress}}}) |
+| Filed Against | {{{attributes.category.label}}} |
+| Planned For | {{{attributes.target.label}}} |
+{{#if attributes.internalTags.content}}
+| Tags | {{{attributes.internalTags.content}}} |
+{{/if}}
