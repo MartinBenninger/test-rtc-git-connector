@@ -31,8 +31,7 @@ Please add some acceptance criteria
 
 
 {{#each linkTypes}}
-{{#eq endpointId "gitcommit"}}
-{{#if linkDTOs.length}}
+{{#if (and (eq endpointId "gitcommit") (not (empty linkDTOs)))}}
 ### Git Commits
 
 {{#each linkDTOs}}
@@ -40,5 +39,4 @@ Git Commit: {{comment}}
 
 {{/each}}
 {{/if}}
-{{/eq}}
 {{/each}}
