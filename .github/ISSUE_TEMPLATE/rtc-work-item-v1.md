@@ -30,15 +30,15 @@ Please add some acceptance criteria
 {{/if}}
 
 
-{{#forEach linkTypes}}
+{{#each linkTypes}}
 {{#eq endpointId "gitcommit"}}
 {{#if linkDTOs.length}}
 ### Git Commits
 
-{{#forEach linkDTOs}}
+{{#each linkDTOs}}
 Git Commit: {{comment}}
 
-{{/forEach}}
+{{/each}}
 {{/if}}
 {{/eq}}
-{{/forEach}}
+{{/each}}
