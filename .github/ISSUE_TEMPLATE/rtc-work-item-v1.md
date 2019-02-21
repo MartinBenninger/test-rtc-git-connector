@@ -28,3 +28,17 @@ Please add some acceptance criteria
 {{#if attributes.internalTags.content}}
 | Tags | {{{attributes.internalTags.content}}} |
 {{/if}}
+
+
+{{#forEach linkTypes}}
+{{#eq endpointId "gitcommit"}}
+{{#if linkDTOs.length}}
+### Git Commits
+
+{{#forEach linkDTOs}}
+Git Commit: {{comment}}
+
+{{/forEach}}
+{{/if}}
+{{/eq}}
+{{/forEach}}
